@@ -15,6 +15,26 @@ This repository contains modifications to the original TelomereHunter code. The 
 - Updated Pythxon2 -> Python3 syntax
 - Used Python3 PySam language for reading BAM files
 
+## Installation
+
+Install the package using `pip`:
+
+```bash
+pip install telomerehunter
+```
+
+## Usage
+Usage is provided with command:
+```bash
+telomereHunter -h
+```
+
+```bash
+telomereHunter [-h] [-ibt TUMOR_BAM] [-ibc CONTROL_BAM] -o OUTPUT_DIR -p PID [-b BANDING_FILE] [-rt REPEAT_THRESHOLD] [-mqt MAPQ_THRESHOLD] [-d]
+               [-r REPEATS [REPEATS ...]] [-con] [-gc1 LOWERGC] [-gc2 UPPERGC] [-nf] [-pl] [-pff {pdf,png,svg,all}] [-p1] [-p2] [-p3] [-p4] [-p5] [-p6]
+               [-prc]
+```	       
+
 ## License
 This project is licensed under the GPL License. You can freely use, modify, and distribute this code under the terms of the GPL, as described in the LICENSE file.
 
