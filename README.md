@@ -15,18 +15,10 @@ This repository contains modifications to the original TelomereHunter code. The 
 - Updated Pythxon2 -> Python3 syntax
 - Used Python3 PySam language for reading BAM files
 
-## Installation
-
-Install the package using `pip`:
-
-```bash
-pip install telomerehunter
-```
-
 ## Usage
 Usage is provided with command:
 ```bash
-telomereHunter -h
+PYTHONPATH=~/git python ~/git/telomereHunter/bin/telomereHunter -h
 ```
 
 ```bash

@@ -23,7 +23,7 @@ import sys
 import re
 import pysam
 import subprocess
-from telomerehunter.filter_telomere_reads import getReverseComplement
+from telomereHunter.filter_telomere_reads import getReverseComplement
 
 ###############################################################################################################################
 ### sorts the reads from an input BAM file (needs to be name sorted!) containing telomere reads into 4 different fractions: ###

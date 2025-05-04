@@ -17,8 +17,6 @@
 # You should have received a copy of the GNU General Public License
 # along with TelomereHunter.  If not, see <http://www.gnu.org/licenses/>.
 
-
-
 import os
 import shutil
 import sys
@@ -28,9 +26,9 @@ import errno
 import multiprocessing
 import re
 
-import telomerehunter
+import telomereHunter
 
-source_directory = os.path.dirname(inspect.getsourcefile(telomerehunter))
+source_directory = os.path.dirname(inspect.getsourcefile(telomereHunter))
 
 ########################
 ### define functions ###
