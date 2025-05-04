@@ -84,7 +84,7 @@ def run_sample(sample_name,
 
     if filter_telomere_reads:
         print ('------ ' + sample_name + ': started filtering telomere reads ------')
-        telomerehunter.filter_telomere_reads.filter_telomere_reads(bam_file=sample_bam,
+        telomereHunter.filter_telomere_reads.filter_telomere_reads(bam_file=sample_bam,
                                       band_file=banding_file,
                                       out_dir=outdir_sample,
                                       pid=pid,
@@ -97,7 +97,7 @@ def run_sample(sample_name,
 
     if sort_telomere_reads:
         print ('------ ' + sample_name + ': started sorting telomere reads ------')
-        telomerehunter.sort_telomere_reads.sort_telomere_reads(input_dir=outdir_sample, 
+        telomereHunter.sort_telomere_reads.sort_telomere_reads(input_dir=outdir_sample, 
                                       band_file=banding_file,
                                       out_dir=outdir_sample,
                                       pid=pid,
@@ -106,7 +106,7 @@ def run_sample(sample_name,
     
     
         # get a table with repeat frequencies per intratelomeric read
-        telomerehunter.repeat_frequency_intratelomeric.repeat_frequency_intratelomeric(input_path=outdir_sample,
+        telomereHunter.repeat_frequency_intratelomeric.repeat_frequency_intratelomeric(input_path=outdir_sample,
                                                    out_dir=outdir_sample, 
                                                    pid=pid,
                                                    repeats=repeats)
@@ -115,14 +115,14 @@ def run_sample(sample_name,
         print ('------ ' + sample_name + ': started estimating telomere content ------')
         
         #get gc content distribution of intratelomeric reads
-        telomerehunter.estimate_telomere_content.get_gc_content_distribution(bam_file=outdir_sample + '/' + pid + '_filtered_intratelomeric.bam',
+        telomereHunter.estimate_telomere_content.get_gc_content_distribution(bam_file=outdir_sample + '/' + pid + '_filtered_intratelomeric.bam',
                                             out_dir=outdir_sample,
                                             pid=pid + '_intratelomeric',
                                             sample=sample_id,
                                             remove_duplicates=remove_duplicates)
 
         #estimate telomere content
-        telomerehunter.estimate_telomere_content.estimate_telomere_content(input_dir=outdir_sample,
+        telomereHunter.estimate_telomere_content.estimate_telomere_content(input_dir=outdir_sample,
                                           out_dir=outdir_sample,
                                           pid=pid,
                                           sample=sample_id,
@@ -323,11 +323,11 @@ if __name__ == '__main__':
 
         if tumor_flag:
             sys.stdout.write('Calculating repeat threshold for tumor sample: ')
-            repeat_threshold_tumor = telomerehunter.get_repeat_threshold.get_repeat_threshold(tumor_bam)
+            repeat_threshold_tumor = telomereHunter.get_repeat_threshold.get_repeat_threshold(tumor_bam)
 
         if control_flag:
             sys.stdout.write('Calculating repeat threshold for control sample: ')
-            repeat_threshold_control = telomerehunter.get_repeat_threshold.get_repeat_threshold(control_bam)
+            repeat_threshold_control = telomereHunter.get_repeat_threshold.get_repeat_threshold(control_bam)
 
         if tumor_flag and control_flag:
             if repeat_threshold_tumor == repeat_threshold_control:
@@ -456,4 +456,4 @@ if __name__ == '__main__':
 
 
         # merge PDF plots if PDF files are created
-        telomerehunter.merge_pdfs.mergeTelomereHunterPDFs(pid=pid, outdir=parent_outdir)
+        telomereHunter.merge_pdfs.mergeTelomereHunterPDFs(pid=pid, outdir=parent_outdir)
